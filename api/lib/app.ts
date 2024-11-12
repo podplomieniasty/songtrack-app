@@ -3,6 +3,7 @@ import {config} from './config';
 import Controller from 'interfaces/controller.interface';
 import mongoose from 'mongoose';
 
+
 class App {
     public app: express.Application;
 
@@ -41,5 +42,7 @@ class App {
             await mongoose.connection.close();
         })
     }
+
+    
 }
 export default App;

@@ -3,7 +3,7 @@ import Controller from "interfaces/controller.interface";
 import path from "path";
 
 class IndexController implements Controller {
-    public path = '/*';
+    public path = '/';
     public router = Router();
 
     constructor() {

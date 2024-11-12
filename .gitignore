@@ -44,3 +44,4 @@ Thumbs.db
 
 # Remove additional files
 /logs
+.env
