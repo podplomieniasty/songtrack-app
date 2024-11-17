@@ -1,13 +1,47 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ImdbService } from './imdb.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+interface Movie {
+  Title: string;
+  Poster: string;
+  Plot: string;
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [FormsModule, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'songtrack-app';
+  title = ''; 
+  movie: Movie | null = null;
+
+  constructor(private imdbService: ImdbService) {}
+
+  searchMovie() {
+    console.log('Searching for movie:', this.title);
+
+    if (this.title.trim()) {
+      this.imdbService.getMovieByTitle(this.title).subscribe(
+        (data: any) => {
+          console.log('Movie data received:', data);
+          if (data.Response === 'True') {
+            this.movie = data;
+          } else {
+            this.movie = null;
+          }
+        },
+        (error: any) => {
+          console.error('Error:', error);
+          this.movie = null;
+        }
+      );
+    } else {
+      this.movie = null;
+    }
+  }
 }
