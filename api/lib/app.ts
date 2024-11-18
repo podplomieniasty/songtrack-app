@@ -2,6 +2,7 @@ import express from 'express';
 import {config} from './config';
 import Controller from 'interfaces/controller.interface';
 import mongoose from 'mongoose';
+import cors from 'cors';
 
 
 class App {
@@ -9,8 +10,14 @@ class App {
 
     constructor(controllers: Controller[]) {
         this.app = express();
+        this.initializeMiddlewares();
         this.initializeControllers(controllers);
         this.connectToDatabase();
+
+    }
+
+    private initializeMiddlewares() {
+        this.app.use(cors());
     }
 
     public listen(): void {

@@ -4,7 +4,7 @@
     </div>
     <div class="efw-container">
         <p>Podaj nazwę szukanego utworu.</p>
-        <input type="text" name="trackName" id="trackName" />
-        <button type="button">Szukaj</button>
+        <input type="text" name="trackName" id="trackName" [(ngModel)]="formData.trackName" />
+        <button type="button" (click)="searchForTrack()">Szukaj</button>
     </div>
 </div>
