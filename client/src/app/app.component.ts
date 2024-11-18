@@ -10,6 +10,7 @@ interface Movie {
   Poster: string;
   Plot: string;
 }
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
