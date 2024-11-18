@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ImdbService } from './imdb.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/header/header.component';
+import { EntryFormComponent } from './components/entry-form/entry-form.component';
 
 interface Movie {
   Title: string;
@@ -12,7 +14,7 @@ interface Movie {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HeaderComponent, EntryFormComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

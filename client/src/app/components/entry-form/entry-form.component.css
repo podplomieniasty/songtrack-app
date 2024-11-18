@@ -1,0 +1,19 @@
+.entry-form-wrapper {
+    width: 500px;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.efw-heading {
+    background-color: #006d77;
+    padding: 10px 15px;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    font-size: 14pt;
+}
+
+.efw-container {
+    padding: 20px 30px;
+}
