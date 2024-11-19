@@ -1,15 +1,17 @@
-<app-header />
-<app-entry-form />
+<app-entry-form *ngIf="isModalVisible" (onModalClose)="toggleModalState(false)"/>
+<div>
+  <app-header (onNewItem)="toggleModalState(true)"/>
+  <router-outlet>
+
+  </router-outlet>
+</div>
 
 
 
 
 
 
-
-
-
-<fieldset>
+<!-- <fieldset>
   <legend>Formularz dodawania</legend>
 </fieldset>
 <fieldset>
@@ -32,4 +34,4 @@
 
 <div *ngIf="!movie">
   <p>Brak danych o filmie. Wpisz tytuł i kliknij "Szukaj".</p>
-</div>
+</div> -->

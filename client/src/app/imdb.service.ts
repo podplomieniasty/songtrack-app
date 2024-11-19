@@ -10,7 +10,7 @@ export class ImdbService {
 
  
   getMovieByTitle(title: string): Observable<any> {
-    const apiUrl = `http://www.omdbapi.com/?t=${title}&apikey=8ad44020`;  
+    const apiUrl = `http://www.omdbapi.com/?t=${title}&plot=full&apikey=8ad44020`;  
     return this.http.get<any>(apiUrl);
   }
 }

@@ -6,5 +6,5 @@ export const config = {
     spotifyApiSecret: process.env.SPOTIFY_CLIENT_SECRET,
     spotifyApiEndpointSearch: 'https://api.spotify.com/v1/search',
     spotifyApiEndpointToken: 'https://accounts.spotify.com/api/token',
-    spotifyApiSearchLimit: 3,
+    spotifyApiSearchLimit: 10,
 };

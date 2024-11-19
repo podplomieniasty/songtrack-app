@@ -3,6 +3,7 @@ import {config} from './config';
 import Controller from 'interfaces/controller.interface';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 
 class App {
@@ -18,6 +19,7 @@ class App {
 
     private initializeMiddlewares() {
         this.app.use(cors());
+        this.app.use(bodyParser.json());
     }
 
     public listen(): void {
