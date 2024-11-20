@@ -15,11 +15,11 @@ export type Query<T> = {
 }
 
 const TrackSchema: Schema = new Schema({
-    spotifyId: {type: String, default: '', required: true},
-    img: {type: String, default: '', required: true},
-    name: {type: String, required: true},
-    artist: {type: String, required: true},
-    href: {type: String, required: true},
+    spotifyId: {type: String, default: ''},
+    img: {type: String, default: ''},
+    name: {type: String, default: ''},
+    artist: {type: String, default: ''},
+    href: {type: String, default: ''},
     movies: {type: Array<IMovie>, default: []}
 })
 

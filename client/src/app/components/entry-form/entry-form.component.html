@@ -15,7 +15,7 @@
             <div *ngFor="let track of fetchedTracks" class="efw-fetched-track" (click)="setSelectedTrack(track)">
                 <img src="{{track.img}}" />
                 <div>
-                    <p>{{track.trackName}}</p>
+                    <p>{{track.name}}</p>
                     <span>{{track.artist}}</span>
                 </div>
             </div>
@@ -26,7 +26,7 @@
             <div class="efw-fetched-track">
                 <img src="{{selectedTrack.img}}" />
                 <div>
-                    <p>{{selectedTrack.trackName}}</p>
+                    <p>{{selectedTrack.name}}</p>
                     <span>{{selectedTrack.artist}}</span>
                 </div>
             </div>
@@ -58,11 +58,11 @@
             <div class="efw-fetched-track">
                 <img src="{{fetchedMovie.img}}" />
                 <div>
-                    <p>{{fetchedMovie.title}}</p>
+                    <p>{{fetchedMovie.name}}</p>
                     <span>{{fetchedMovie.year}}</span>
                 </div>
             </div>
-            <button class="efw-submit" type="button">Dodaj wpis</button>
+            <button class="efw-submit" type="button" (click)="handleFormSubmit()">Dodaj wpis</button>
         </div>
         
     </div>

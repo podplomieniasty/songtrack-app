@@ -14,15 +14,22 @@ class TrackController implements Controller {
 
     initializeRoutes(): void {
         this.router.get(`${this.path}/all`, this.returnAllTracks);
+        this.router.get(`${this.path}/single/:spotifyId`, this.returnSingleTrackData);
         this.router.post(`${this.path}/add`, this.handleTrackAdd);
     }
 
     handleTrackAdd = async (req: Request, res: Response, next: NextFunction) => {
-        const track: ITrack = {...req.body};
-        console.log(track);
+        const track: ITrack = req.body;
         try {
-            await this.service.addTrack(track);
-            res.status(200).json('Succesfully added trackingo');
+            if((await this.service.query({spotifyId: track.spotifyId})).length != 0) {
+                console.log('Now updating track');
+                await this.service.updateMovieList(track);
+                res.status(200).json('Succesfully updated trackingo');
+            } else {
+                console.log('Now adding track');
+                await this.service.addTrack(track);
+                res.status(200).json('Succesfully added trackingo');
+            }
         } catch (err) {
             console.error(`Error adding track: `, err);
             res.status(401).json({error: 'Something is not yes'});
@@ -32,6 +39,12 @@ class TrackController implements Controller {
 
     returnAllTracks = async (req: Request, res: Response, next: NextFunction) => {
         const result = await this.service.query({});
+        res.status(200).json(result);
+    }
+
+    returnSingleTrackData = async (req: Request, res: Response, next: NextFunction) => {
+        const { spotifyId } = req.params;
+        const result = await this.service.query({spotifyId: spotifyId});
         res.status(200).json(result);
     }
 }

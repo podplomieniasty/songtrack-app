@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { SpotifyService } from '../../services/spotify.service';
 import { CommonModule } from '@angular/common';
 import { ImdbService } from '../../imdb.service';
+import ITrack from '../../interfaces/track.interface';
+import { TrackService } from '../../services/track.service';
 
 @Component({
   selector: 'app-entry-form',
@@ -30,7 +32,7 @@ export class EntryFormComponent {
 
   @Output() onModalClose: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private spotify: SpotifyService, private imdb: ImdbService) {}
+  constructor(private spotify: SpotifyService, private imdb: ImdbService, private trackService: TrackService) {}
   
   searchForTrack = () => {
     if(this.formData.trackName === '') return;
@@ -46,11 +48,13 @@ export class EntryFormComponent {
           const { id, name } = track;
           const img = track.album.images[0].url;
           const artist = track.album.artists[0].name;
+          const href = track.external_urls.spotify;
           const fetchedTrack = {
-            id: id,
+            spotifyId: id,
             img: img,
-            trackName: name,
-            artist: artist
+            name: name,
+            artist: artist, 
+            href: href
           }
           this.fetchedTracks.push(fetchedTrack);
         })
@@ -66,10 +70,10 @@ export class EntryFormComponent {
       .subscribe((res: any) => {
         this.fetchedMovie = {
           id: res.imdbID,
-          title: res.Title,
+          name: res.Title,
           year: res.Year,
           plot: res.Plot,
-          img: res.Poster
+          img: res.Poster,
         }
         this.isMovieSelected = true;
       })
@@ -83,5 +87,17 @@ export class EntryFormComponent {
 
   emitModalClose(): void {
     this.onModalClose.emit(true);
+  }
+
+  handleFormSubmit(): void {
+    const track: ITrack = {
+      ...this.selectedTrack,
+      movies: [this.fetchedMovie]
+    }
+    this.trackService.addNewTrack(track).subscribe((res) => {
+      console.log('Succes!');
+      console.log(res);
+      this.emitModalClose();
+    })
   }
 }
