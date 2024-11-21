@@ -19,8 +19,10 @@ Testy w późniejszej fazie projektu
 
 ### Dokumentacja API
 Dokumentacja API wygenerowana zostanie i dołączona do dokumentacji w późniejszej fazie projektu
+
 ###Przypadki testowania dla testera maualnego
 Późniejsza faza projektu
+
 ###Technologie użyte w Projekcie 
 
 ##### 1. MongoDB
