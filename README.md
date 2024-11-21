@@ -68,8 +68,3 @@ Przykładowe zastosowanie w projekcie: Node.js uruchamia serwer aplikacji, obsł
 Ten stos technologiczny pozwala na pełne tworzenie aplikacji webowych od bazy danych po interfejs użytkownika.
 
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
