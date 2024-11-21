@@ -20,4 +20,8 @@ export class TrackService {
     headers.append('Content-Type','application/json');
     return this.http.post(`${API_ENDPOINTS.TRACK}/add`, {...track}, {headers: headers});
   }
+
+  getSingleTrack(spotifyId: string) {
+    return this.http.get(`${API_ENDPOINTS.TRACK}/single/${spotifyId}`);
+  }
 }
