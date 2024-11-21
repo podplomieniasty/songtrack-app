@@ -20,10 +20,11 @@ Testy w późniejszej fazie projektu
 ### Dokumentacja API
 Dokumentacja API wygenerowana zostanie i dołączona do dokumentacji w późniejszej fazie projektu
 
-###Przypadki testowania dla testera maualnego
+### Przypadki testowania dla testera maualnego
+
 Późniejsza faza projektu
 
-###Technologie użyte w Projekcie 
+### Technologie użyte w Projekcie 
 
 ##### 1. MongoDB
 MongoDB to nierelacyjna baza danych (NoSQL), która przechowuje dane w formacie dokumentów JSON lub BSON. Używana jest do obsługi dużych ilości danych, gdzie struktura informacji może być zmienna. MongoDB pozwala na:
