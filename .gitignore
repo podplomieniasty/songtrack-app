@@ -44,3 +44,6 @@ Thumbs.db
 
 # Remove additional files
 /logs
+node_modules
+/node_modules/
+.env

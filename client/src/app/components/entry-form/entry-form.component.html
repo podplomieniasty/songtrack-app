@@ -1,0 +1,69 @@
+<div class="entry-form">
+    <div class="entry-form-wrapper">
+        <div class="efw-heading">
+            <span class="efw-heading-button" (click)="emitModalClose()">X</span>
+        </div>
+        <div class="efw-container">
+            <h3>Wyszukaj utwór</h3>
+            <p>Podaj nazwę szukanego utworu.</p>
+            <input type="text" name="trackName" id="trackName" [(ngModel)]="formData.trackName" />
+            <button type="button" (click)="searchForTrack()">Szukaj</button>
+        </div>
+    
+        <div class="efw-container efw-fetched-tracks" *ngIf="fetchedTracks.length > 0">
+            <h4>Wyszukane utwory</h4>
+            <div *ngFor="let track of fetchedTracks" class="efw-fetched-track" (click)="setSelectedTrack(track)">
+                <img src="{{track.img}}" />
+                <div>
+                    <p>{{track.name}}</p>
+                    <span>{{track.artist}}</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="efw-container" *ngIf="isTrackSelected">
+            <h4>Wybrany utwór</h4>
+            <div class="efw-fetched-track">
+                <img src="{{selectedTrack.img}}" />
+                <div>
+                    <p>{{selectedTrack.name}}</p>
+                    <span>{{selectedTrack.artist}}</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="efw-container" *ngIf="isTrackSelected">
+            <h3>Gdzie napotkano utwór?</h3>
+            <div class="efw-radio-group">
+                <label>
+                    <input type="radio" name="trackSource" id="trackSource" value="movie" [(ngModel)]="formData.sourceType" checked >
+                    <span>Film</span>
+                </label>
+                <!-- <label>
+                    <input type="radio" name="trackSource" id="trackSource" value="show" [(ngModel)]="formData.sourceType">
+                    <span>Serial</span>
+                </label>
+                <label>
+                    <input type="radio" name="trackSource" id="trackSource" value="game" [(ngModel)]="formData.sourceType">
+                    <span>Gra</span>
+                </label> -->
+            </div>
+            <p>Znajdź miejsce wystąpienia utworu.</p>
+            <input type="text" name="trackName" id="trackName" [(ngModel)]="formData.sourceName" />
+            <button type="button" (click)="searchForSource()">Szukaj</button>
+        </div>
+    
+        <div class="efw-container" *ngIf="isMovieSelected">
+            <h4>Znalezione źródło</h4>
+            <div class="efw-fetched-track">
+                <img src="{{fetchedMovie.img}}" />
+                <div>
+                    <p>{{fetchedMovie.name}}</p>
+                    <span>{{fetchedMovie.year}}</span>
+                </div>
+            </div>
+            <button class="efw-submit" type="button" (click)="handleFormSubmit()">Dodaj wpis</button>
+        </div>
+        
+    </div>
+</div>
