@@ -1,0 +1,88 @@
+.reg-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: auto;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.reg-subheader {
+    font-size: 10pt;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.reg-wrapper {
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    width: auto;
+    max-width: 1000px;
+
+    padding: 30px 40px;
+    
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px gray;
+    
+}
+
+.reg-wrapper h1 {
+    font-weight: bold;
+}
+
+.reg-wrapper input {
+    height: 32px;
+    width: 250px;
+
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 6px;
+
+    background-color: var(--color-primary-faded);
+}
+
+.reg-wrapper input:focus {
+    border: none;
+    outline: none;
+}
+
+.reg-recover-pwd {
+    font-size: 10pt;
+    color: #648767;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reg-recover-pwd:hover {
+    text-decoration: underline;
+}
+
+.reg-btn {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 35px;
+
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    color: white;
+    font-weight: bold;
+    
+    transition: all 75ms ease-in-out;
+    cursor: pointer;
+
+}
+
+.reg-btn:hover {
+    background-color: var(--color-primary-alt);
+}

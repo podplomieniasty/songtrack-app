@@ -1,0 +1,11 @@
+<div class="reg-container-wrapper">
+    <div class="reg-container">
+        <div class="reg-wrapper">
+            <h1>Rejestracja</h1>
+            
+            <input type="email" id="reg-name" name="reg-name" placeholder="Nazwa" [(ngModel)]="credentials.name">
+            <input type="password" id="reg-password" name="reg-password" placeholder="Hasło"[(ngModel)]="credentials.password">
+            <button class="reg-btn" type="button" (click)="create()">Zarejestruj się</button>
+        </div>
+    </div>    
+</div>

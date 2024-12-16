@@ -1,0 +1,11 @@
+<div class="login-container-wrapper">
+    <div class="login-wrapper">
+        <h1>Logowanie</h1>
+        
+        <input type="email" id="login-name" name="login-name" placeholder="Nazwa" [(ngModel)]="credentials.name">
+
+        <input type="password" id="login-password" name="login-password" placeholder="Hasło" [(ngModel)]="credentials.password">
+        <span class="login-recover-pwd">Zapomniałeś hasła?</span>
+        <button class="login-btn" type="button" (click)="signIn()">Zaloguj się</button>
+    </div>
+</div>

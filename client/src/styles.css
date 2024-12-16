@@ -5,3 +5,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --color-primary: #006d77;
+    --color-primary-alt: #0b8f9b;
+    --color-primary-alt-hover: #05a1af;
+    --color-primary-faded: #e2edee;
+
+    --color-danger: #b42121;
+    --color-danger-alt: #eb2d2d;
+
+    --color-white: whitesmoke;
+}

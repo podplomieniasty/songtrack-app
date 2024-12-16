@@ -1,6 +1,12 @@
 <header class="header-wrapper">
     <h1 routerLink="/">songtrack</h1>
-    <p routerLink="/entries">Wpisy</p>
-    <p routerLink="/about">O aplikacji</p>
-    <button (click)="toggleModalOpening()">Dodaj wpis</button>
+    <p class="nav-elem" routerLink="/entries">Wpisy</p>
+    <p class="nav-elem" routerLink="/about">O aplikacji</p>
+
+    <p      *ngIf="!isLogged" class="header-yeet" routerLink="/login">Logowanie</p>
+    <span   *ngIf="!isLogged" class="btn-alt" routerLink="/signup">Rejestracja</span>
+
+    <span    *ngIf="isLogged" class="header-yeet btn-alt" (click)="toggleModalOpening()">Dodaj nowy</span>
+    <span *ngIf="isLogged" class="btn-alt btn-danger" (click)="logout()">Wyloguj</span>
+
 </header>

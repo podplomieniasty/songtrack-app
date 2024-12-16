@@ -15,19 +15,28 @@
 
 .header-wrapper h1 {
     font-weight: 1000;
-    color: whitesmoke;
+    color: var(--color-white);
     user-select: none;
     cursor: pointer;
 }
 
 .header-wrapper p {
-    color: whitesmoke;
+    color: var(--color-white);
     font-weight: 600;
     cursor: pointer;
+    display: block;
+    height: 100%;
+    padding: 10px 15px;
+    border-radius: 3px;
 }
 
 .header-wrapper p:hover {
     color: lightgray;
+    background-color: var(--color-primary-alt);
+}
+
+.header-yeet {
+    margin-left: auto;
 }
 
 .header-wrapper button {
@@ -38,14 +47,37 @@
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
-    margin-left: auto;
 
     font-weight: 700;
-    color: #006d77;
+    color: var(--color-primary);
     box-shadow: 1px 1px 10px black;
     cursor: pointer;
 
     transition: transform 0.1s ease-in-out;
+}
+
+.btn-alt {
+    color: var(--color-white);
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    padding: 10px 15px;
+    border-radius: 3px;
+    background-color: var(--color-primary-alt);
+}
+
+.btn-alt:hover {
+    background-color: var(--color-primary-alt-hover);
+    color: var(--color-white);
+}
+
+.btn-danger {
+    background-color: var(--color-danger);
+}
+
+.btn-danger:hover {
+    background-color: var(--color-danger-alt);
 }
 
 .header-wrapper button:hover {
