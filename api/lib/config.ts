@@ -8,4 +8,5 @@ export const config = {
     spotifyApiEndpointSearch: 'https://api.spotify.com/v1/search',
     spotifyApiEndpointToken: 'https://accounts.spotify.com/api/token',
     spotifyApiSearchLimit: 10,
+    OMDB_API_KEY: process.env.OMDB_API_KEY,
 };

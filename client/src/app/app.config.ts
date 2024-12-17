@@ -15,6 +15,7 @@ export const appConfig: ApplicationConfig = {
 };
 export const API_ENDPOINTS = {
   SPOTIFY: 'http://localhost:4201/api/spotify',
-  TRACK: 'http://localhost:4201/api/track'
+  TRACK: 'http://localhost:4201/api/track',
+  OMDB: 'http://localhost:4201/api/omdb'
 }
 export const API_URL: string = 'http://localhost:4201';
