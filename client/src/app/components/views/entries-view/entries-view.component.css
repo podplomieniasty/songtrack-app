@@ -1,8 +1,22 @@
 .entries-view {
+    
+
+    padding: 20px 25px;
+    margin: 40px 15%;
+
+    box-shadow: 0px 0px 10px gray;
+}
+
+.entries-h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.entries-wrapper {
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-
-    padding: 20px 25px;
 }

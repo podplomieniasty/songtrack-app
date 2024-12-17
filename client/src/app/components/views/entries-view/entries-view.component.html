@@ -1,3 +1,9 @@
 <div class="entries-view">
-    <app-entry-card *ngFor="let entry of fetchedEntries" [track]="entry" />
+    <div>
+        <h2 class="entries-h2">Wpisy</h2>
+        <app-searchbar (phrase)="filterByPhrase($event)"/>
+    </div>
+    <div class="entries-wrapper">
+        <app-entry-card *ngFor="let entry of filteredEntries" [track]="entry" />
+    </div>
 </div>

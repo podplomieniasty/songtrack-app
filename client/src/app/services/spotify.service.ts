@@ -12,4 +12,8 @@ export class SpotifyService {
   getFirstTrack = (track: string) => {
     return this.http.get(`${API_ENDPOINTS.SPOTIFY}/search/${track}`);
   }
+
+  getTrackById = (id: string) => {
+    return this.http.get(`${API_ENDPOINTS.SPOTIFY}/track/${id}`);
+  }
 }

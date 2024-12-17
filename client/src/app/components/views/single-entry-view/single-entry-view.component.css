@@ -17,3 +17,17 @@
     height: 256px;
     box-shadow: 0px 0px 3px black;
 }
+
+.sev-data h1 {
+    color: var(--color-primary);
+}
+
+.sev-data h2 {
+    font-weight: 600;
+    color: var(--color-primary-alt);
+    font-size: 20px;
+}
+
+.sev-track-data-div {
+    margin-top: 30px;
+}

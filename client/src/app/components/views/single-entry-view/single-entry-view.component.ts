@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TrackService } from '../../../services/track.service';
 import ITrack from '../../../interfaces/track.interface';
 import { CommonModule } from '@angular/common';
+import { SpotifyService } from '../../../services/spotify.service';
 
 @Component({
   selector: 'app-single-entry-view',
@@ -22,9 +23,13 @@ export class SingleEntryViewComponent implements OnInit {
     movies: [],
     name: '...'
   }
+  apiTrackData: any = {};
   isLoaded: boolean = false;
 
-  constructor(private route: ActivatedRoute, private trackService: TrackService) {
+  constructor(
+    private route: ActivatedRoute, 
+    private trackService: TrackService,
+    private spotifyService: SpotifyService) {
     
   }
 
@@ -34,6 +39,11 @@ export class SingleEntryViewComponent implements OnInit {
       const data = res as ITrack[];
       this.trackData = data[0];
       this.isLoaded = true;
-    })
+      this.spotifyService.getTrackById(this.trackData.spotifyId).subscribe((res) => {
+        this.apiTrackData = res;
+        console.log(res);
+      })
+    });
+    
   }
 }

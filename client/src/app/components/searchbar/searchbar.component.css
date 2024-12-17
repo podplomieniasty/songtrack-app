@@ -1,0 +1,5 @@
+.sb-input {
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    padding: 5px 7px;
+}

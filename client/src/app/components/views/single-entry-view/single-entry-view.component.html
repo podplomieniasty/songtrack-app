@@ -5,10 +5,17 @@
         </div>
         <div class="sev-data">
             <h1>{{trackData.name}}</h1>
-            <p>{{trackData.artist}}</p>
+            <h2>{{trackData.artist}}</h2>
             <div class="sev-track-data">
-
+                <div class="sev-track-data-div">
+                    <div>
+                        <p><b>Data wydania:</b> {{apiTrackData.album.release_date || '...'}}</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div>
+        Helo
     </div>
 </div>
