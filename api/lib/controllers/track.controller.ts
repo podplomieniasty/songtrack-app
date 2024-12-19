@@ -21,10 +21,13 @@ class TrackController implements Controller {
     handleTrackAdd = async (req: Request, res: Response, next: NextFunction) => {
         const track: ITrack = req.body;
         try {
-            if((await this.service.query({spotifyId: track.spotifyId})).length != 0) {
+            if(!track.spotifyId) {
+                res.status(400).json('Invalid data format');
+            }
+            else if((await this.service.query({spotifyId: track.spotifyId})).length != 0) {
                 console.log('Now updating track');
-                await this.service.updateMovieList(track);
-                res.status(200).json('Succesfully updated trackingo');
+                const updated = await this.service.updateMovieList(track);
+                res.status(200).json(updated);
             } else {
                 console.log('Now adding track');
                 await this.service.addTrack(track);
@@ -44,6 +47,11 @@ class TrackController implements Controller {
 
     returnSingleTrackData = async (req: Request, res: Response, next: NextFunction) => {
         const { spotifyId } = req.params;
+        if(!spotifyId) {
+            res.status(404).json('no track found');
+        } else {
+
+        }
         const result = await this.service.query({spotifyId: spotifyId});
         res.status(200).json(result);
     }

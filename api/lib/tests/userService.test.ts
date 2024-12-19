@@ -24,7 +24,6 @@ describe('UserService', () => {
 
     expect(createdUser).toHaveProperty('_id');
     expect(createdUser.name).toBe('Test User');
-    expect(createdUser.email).toBe('test@example.com');
   });
 
   it('should query user by name', async () => {

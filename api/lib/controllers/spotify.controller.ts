@@ -91,11 +91,16 @@ class SpotifyController implements Controller {
 
     private searchForTrackByName = (req: Request, res: Response, next: NextFunction) => {
         const { track } = req.params;
-        this.getToken().then(response => {
-            this.getTrackByName(track, response.access_token).then(data => {
-                res.status(200).json(data);
+        if(!track) {
+            res.status(400).json('No track provided');
+        } else {
+            this.getToken().then(response => {
+                this.getTrackByName(track, response.access_token).then(data => {
+                    res.status(200).json(data);
+                })
             })
-        })
+        }
+        
     }
 
 }
