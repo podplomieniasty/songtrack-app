@@ -59,6 +59,30 @@ Testowanie i Jakość Oprogramowania
 | Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Zatwierdź</li></ol> |
 | Rezultat | Komunikat o wykrytych błędnych wartościach, błąd logowania |
 
+| | |
+| - | - |
+| ID | TC008 |
+| Tytuł | Logowanie użytkownika z błędną nazwą użytkownika |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Uzupełnij pole 'Nazwa' wartością zawierającą znaki spoza zakresu: [a-zA-Z0-9_]</li><li>Uzupełnij pole 'Hasło' wartością dłuższą lub równą 6 znakom</li><li>Zatwierdź</li></ol> |
+| Rezultat | Komunikat o wykrytych błędnych wartościach, błąd logowania |
+
+| | |
+| - | - |
+| ID | TC009 |
+| Tytuł | Logowanie użytkownika z nieistniejącym użytkownikiem |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Uzupełnij pole 'Nazwa' wartością nie znajdującą się w bazie.</li><li>Uzupełnij pole 'Hasło' wartością dłuższą lub równą 6 znakom</li><li>Zatwierdź</li></ol> |
+| Rezultat | Komunikat o nieistniejącym użytkowniku, błąd logowania |
+
+| | |
+| - | - |
+| ID | TC010 |
+| Tytuł | Logowanie użytkownika z błędnym hasłem |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Uzupełnij pole 'Nazwa' wartością znajdującą się w bazie.</li><li>Uzupełnij pole 'Hasło' wartością nie odpowiadającą danemu kontu</li><li>Zatwierdź</li></ol> |
+| Rezultat | Komunikat o błędzie walidacji, błąd logowania |
+
 # **Apikacja do śledzenia utworów muzycznych w popkulturze**
 
 ### Opis 
