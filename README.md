@@ -3,7 +3,61 @@ Testowanie i Jakość Oprogramowania
 ### **Autorzy**
 ##### **Bartosz Burzec, Tomasz Fela**
 
+| | |
+| - | - |
+| ID | TC001 |
+| Tytuł | Rejestracja nowego użytkownika |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Rejestracja'</li><li>Uzupełnij wszystkie dane formularza i zatwierdź</li></ol> |
+| Rezultat | Przeniesienie do głównego ekranu aplikacji, pomyślna rejestracja | 
 
+| | |
+| - | - |
+| ID | TC002 |
+| Tytuł | Rejestracja użytkownika z pustymi wartościami |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Rejestracja'</li><li>Zatwierdź formularz bez wpisywania żadnych wartości</li></ol> |
+| Rezultat | Komunikat o błędzie rejestracji, brak utworzonego konta | 
+
+| | |
+| - | - |
+| ID | TC003 |
+| Tytuł | Rejestracja użytkownika z błędnymi znakami w nazwie |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Rejestracja'</li><li>Uzupełnij pole 'Nazwa' wartością zawierającą znaki spoza zakresu: [a-zA-Z0-9_]</li><li>Uzupełnij pole 'Hasło' wartością dłuższą lub równą 6 znakom</li><li>Zatwierdź</li></ol> |
+| Rezultat | Komunikat o wykrytych błędnych wartościach, brak utworzonego konta | 
+
+| | |
+| - | - |
+| ID | TC004 |
+| Tytuł | Rejestracja użytkownika z za krótkim hasłem |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Rejestracja'</li><li>Uzupełnij pole 'Nazwa' poprawną wartością</li><li>Uzupełnij pole 'Hasło' wartością krótszą niż 6 znaków</li><li>Zatwierdź</li></ol> |
+| Rezultat | Komunikat o za krótkim haśle, brak utworzonego konta | 
+
+| | |
+| - | - |
+| ID | TC005 |
+| Tytuł | Rejestracja użytkownika o istniejącej w bazie nazwie |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Rejestracja'</li><li>Uzupełnij pole 'Nazwa' wartością: 'sivetive'</li><li>Uzupełnij pole 'Hasło' wartością dłuższą lub równą 6 znakom</li><li>Zatwierdź</li></ol> |
+| Rezultat | Komunikat o istniejącym koncie, brak utworzonego konta | 
+
+| | |
+| - | - |
+| ID | TC006 |
+| Tytuł | Logowanie użytkownika |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Uzupełnij pole 'Nazwa' wartością istniejącą w bazie</li><li>Uzupełnij pole 'Hasło' wartością odpowiadającą podanej nazwie</li><li>Zatwierdź</li></ol> |
+| Rezultat | Przeniesienie do głównej strony aplikacji, widoczny przycisk 'Wyloguj', pomyślne logowanie |
+
+| | |
+| - | - |
+| ID | TC007 |
+| Tytuł | Logowanie użytkownika z pustymi wartościami |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Zatwierdź</li></ol> |
+| Rezultat | Komunikat o wykrytych błędnych wartościach, błąd logowania |
 
 # **Apikacja do śledzenia utworów muzycznych w popkulturze**
 
