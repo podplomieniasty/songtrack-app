@@ -111,17 +111,22 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "target": "ES5",
+    "target": "ES6", 
     "outDir": "./dist",
     "baseUrl": "./lib",
     "alwaysStrict": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "moduleResolution": "node", 
+    "module": "CommonJS", 
+    "skipLibCheck": true, 
+    "resolveJsonModule": true 
   },
   "include": [
     "lib/**/*.ts",
+    "tests/**/*.ts" 
   ],
   "exclude": [
     "node_modules"
