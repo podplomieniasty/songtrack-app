@@ -6,6 +6,7 @@
 
         <input type="password" id="login-password" name="login-password" placeholder="Hasło" [(ngModel)]="credentials.password">
         <span class="login-recover-pwd">Zapomniałeś hasła?</span>
+        <span class="login-danger">{{errorMessage}}</span>
         <button class="login-btn" type="button" (click)="signIn()">Zaloguj się</button>
     </div>
 </div>
