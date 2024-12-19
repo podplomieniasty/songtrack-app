@@ -3,6 +3,34 @@ Testowanie i Jakość Oprogramowania
 ### **Autorzy**
 ##### **Bartosz Burzec, Tomasz Fela**
 
+
+# **Aplikacja do śledzenia utworów muzycznych w popkulturze**
+
+### Opis 
+Aplikacja służy do zliczania oraz dokumentowania wystąpień utworów muzycznych w popkulturze (filmy, seriale, piosenki, opcjonalnie memy oraz inne) na podstawie wpisów generowanych przez użytkowników. Jest to aplikacja budowana przez społeczność. Można przejrzeć listę wystąpień piosenki w wyżej wspomnianych kategoriach, kto je uzupełniał itp. Informacje o piosenkach, filmach, grach i serialach są pobierane z zewnętrznych API (Spotify API, IMDB API, IGDB API).
+
+
+### Uruchamianie aplikacji
+<ul>
+  <li>
+    W celu uruchomienia aplikacji frontendowej, w katalogu <b>client</b> należy użyć polecenia <code>ng serve</code>.
+  </li>
+  <li>
+    W celu uruchomienia aplikacji serwerowej, w katalogu <b>api</b> należy użyć polecenia <code>npm run dev</code>.
+  </li>
+</ul>
+
+### Testy
+| Rodzaj testów | Lokalizacja | Liczba testów | Opis |
+| -             | -           | - | -    |
+| jednostkowe   | api/lib/tests | 15 | Testy jednostkowe napisano dla indywidualnych serwisów aplikacji serwerowej. Serwisy są kluczowym elementem całej aplikacji, ponieważ opdowiadają za bezpośrednią komunikację z bazą danych i zwracanie danych wyświetlanych w aplikacji frontendowej. |
+| integracyjne  | api/lib/tests/integration | 11 | Testom integracyjnym poddano najważniejsze kontrolery serwera, w celu poprawnego oszacowania kompatybilności z aplikacjami biblioteki Express.js i ocenienia jak radzą sobie w symulowanym, działającym środowisku. |
+| manualne | interfejs użytkownika | 10 | Testom manualnym poddano formularze komunikacji użytkownika z aplikacją. Te formularze obsługują rejestrację i logowanie użytkownika do aplikacji.  |
+
+### Dokumentacja API
+Dokumentacja API wygenerowana zostanie i dołączona do dokumentacji w późniejszej fazie projektu
+
+### Przypadki testowania dla testera maualnego
 | | |
 | - | - |
 | ID | TC001 |
@@ -83,22 +111,6 @@ Testowanie i Jakość Oprogramowania
 | Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Uzupełnij pole 'Nazwa' wartością znajdującą się w bazie.</li><li>Uzupełnij pole 'Hasło' wartością nie odpowiadającą danemu kontu</li><li>Zatwierdź</li></ol> |
 | Rezultat | Komunikat o błędzie walidacji, błąd logowania |
 
-# **Apikacja do śledzenia utworów muzycznych w popkulturze**
-
-### Opis 
-Aplikacja służy do zliczania oraz dokumentowania wystąpień utworów muzycznych w popkulturze (filmy, seriale, piosenki, opcjonalnie memy oraz inne) na podstawie wpisów generowanych przez użytkowników. Jest to aplikacja budowana przez społeczność. Można przejrzeć listę wystąpień piosenki w wyżej wspomnianych kategoriach, kto je uzupełniał itp. Informacje o piosenkach, filmach, grach i serialach są pobierane z zewnętrznych API (Spotify API, IMDB API, IGDB API).
-
-
-### Uruchamianie aplikacji
-Uruchamianie aplikacji odbywa się przy użyciu **npm run dev**
-
-### Testy
-Testy w późniejszej fazie projektu
-
-### Dokumentacja API
-Dokumentacja API wygenerowana zostanie i dołączona do dokumentacji w późniejszej fazie projektu
-
-### Przypadki testowania dla testera maualnego
 
 Późniejsza faza projektu
 
