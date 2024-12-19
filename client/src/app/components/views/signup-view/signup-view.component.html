@@ -5,6 +5,8 @@
             
             <input type="email" id="reg-name" name="reg-name" placeholder="Nazwa" [(ngModel)]="credentials.name">
             <input type="password" id="reg-password" name="reg-password" placeholder="Hasło"[(ngModel)]="credentials.password">
+            <span class="reg-danger">{{errorMessage}}</span>
+
             <button class="reg-btn" type="button" (click)="create()">Zarejestruj się</button>
         </div>
     </div>    

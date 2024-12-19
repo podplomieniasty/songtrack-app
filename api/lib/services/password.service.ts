@@ -19,8 +19,9 @@ class PasswordService {
 
     public async authorize(userId: string, password: string) {
         try {
-            const result = await PasswordModel.findOne({userId: userId, password: password});
-            if(result) return true;
+            const result = await PasswordModel.findOne({userId: userId});
+            const pwdGood = await bcrypt.compare(password, result.password);
+            if(pwdGood) return true;
         } catch (err) {
             console.error('PasswordService: Błąd autoryzacji użytkownika: ', err);
             throw new Error('PasswordService: Błąd autoryzacji użytkownika.');

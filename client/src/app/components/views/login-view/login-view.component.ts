@@ -21,15 +21,26 @@ export class LoginViewComponent {
   public logged?: boolean;
   public logout?: boolean;
 
+  errorMessage: string = '';
+
   constructor(public userService: UserService, private router: Router) {
 
   }
 
   signIn() {
-    return this.userService.authenticate(this.credentials).subscribe((res) => {
+    const reg = '[^a-zA-Z0-9_]'
+    const regex = new RegExp(reg);
+    if(this.credentials.name === '' || this.credentials.password === '' || regex.test(this.credentials.name)) {
+      this.errorMessage = "Błąd logowania. Formularz zawiera błędne wartości."
+      return;
+    }
+    return this.userService.authenticate(this.credentials).subscribe((res: any) => {
       if(!res) {
         this.logged = false;
+        this.errorMessage = 'Błąd walidacji.'
+        return;
       } else {
+        this.errorMessage = '';
         this.logout = false;
         this.credentials = {
           name: '',

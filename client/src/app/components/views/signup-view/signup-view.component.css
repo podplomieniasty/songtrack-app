@@ -86,3 +86,8 @@
 .reg-btn:hover {
     background-color: var(--color-primary-alt);
 }
+
+.reg-danger {
+    color: var(--color-danger);
+    font-weight: 600;
+}

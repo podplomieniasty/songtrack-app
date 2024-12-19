@@ -86,3 +86,8 @@
 .login-btn:hover {
     background-color: var(--color-primary-alt)
 }
+
+.login-danger {
+    color: var(--color-danger);
+    font-weight: 600;
+}
