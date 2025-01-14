@@ -21,6 +21,7 @@ class SpotifyController implements Controller {
         // this.router.get(`${this.path}/authcallback`, this.authCallback);
         this.router.get(`${this.path}/token`, this.getToken);
         this.router.get(`${this.path}/search/:track`, this.searchForTrackByName);
+        this.router.get(`${this.path}/track/:spotifyId`, this.getTrackById);
     }
 
     private getToken = async () => {
@@ -58,6 +59,27 @@ class SpotifyController implements Controller {
             })
         }
         
+    }
+
+    private fetchById = async (id: string, token: string) => {
+        const result = await fetch(`${config.spotifyApiEndpointTrack}/${id}`, {
+            method: 'GET',
+            headers: { 'Authorization': 'Bearer ' +  token }
+        });
+        return await result.json();
+    }
+
+    private getTrackById = (req: Request, res: Response) => {
+        const { spotifyId } = req.params;
+        if(!spotifyId) {
+            res.status(400).json('No track provided!');
+        } else {
+            this.getToken().then((tk) => {
+                this.fetchById(spotifyId, tk.access_token).then((resp) => {
+                    res.status(200).json(resp);
+                })
+            })
+        }
     }
 
 }

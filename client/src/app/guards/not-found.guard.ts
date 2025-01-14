@@ -5,13 +5,13 @@ import { map } from 'rxjs';
 
 export const notFoundGuard: CanActivateFn = (route, state) => {
   const spotify = inject(SpotifyService);
+  const router = inject(Router);
   return spotify.getTrackById(route.paramMap.get('spotifyId')!).pipe(
     map((res: any) => {
-      if(res.length > 0) {
-        console.log(res.length);
+      if(res.id) {
         return true;
       } else {
-        return inject(Router).createUrlTree(['/notfound']);
+        return router.createUrlTree(['/notfound']);
       }
     })
   )

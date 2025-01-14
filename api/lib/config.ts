@@ -7,6 +7,7 @@ export const config = {
     spotifyApiSecret: process.env.SPOTIFY_CLIENT_SECRET,
     spotifyApiEndpointSearch: 'https://api.spotify.com/v1/search',
     spotifyApiEndpointToken: 'https://accounts.spotify.com/api/token',
+    spotifyApiEndpointTrack: 'https://api.spotify.com/v1/tracks',
     spotifyApiSearchLimit: 10,
     OMDB_API_KEY: process.env.OMDB_API_KEY,
 };

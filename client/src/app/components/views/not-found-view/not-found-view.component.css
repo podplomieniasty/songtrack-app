@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(188, 205, 211);
+}
+
+.wrapper h1 {
+    font-size: 256px;
+    color: rgb(188, 205, 211);
+    user-select: none;
+}
+
+.wrapper p {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(159, 176, 182);
+}

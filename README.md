@@ -167,6 +167,38 @@ Dokumentacja API wygenerowana zostanie i dołączona do dokumentacji w później
 | Kroki testowe | <ol><li>Uzupełnij pole wyszukiwania tytułem istniejącego utworu i kliknij 'Szukaj'.</li><li>Z rozwijanej listy kliknij docelowy utwór.</li><li>Wybierz opcję 'Film'.</li><li>Wpisz tytuł filmu, który nie istnieje w bazie, lub losowy ciąg znaków.</li><li>Kliknij 'Szukaj'.</li></ol> |
 | Rezultat | Brak kolejnej akcji, pojawia się komunikat o błędzie. |
 
+| | |
+| - | - |
+| ID | TC018 |
+| Tytuł | Uruchamianie ekranu detali wpisu |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wejdź w zakładkę 'Wpisy'.</li><li>Wejdź w dowolny z widocznych wpisów.</li></ol> |
+| Rezultat | Ekran uzupełniony o dane pobrane ze Spotify API, dostęp do ekranu, widoczne SpotifyID w pasku przeglądarki. |
+
+| | |
+| - | - |
+| ID | TC019 |
+| Tytuł | Uruchamianie ekranu detali wpisu z pustym ID |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wejdź w zakładkę 'Wpisy'.</li><li>Wejdź w dowolny z widocznych wpisów.</li><li>W pasku URL usuń ostatni ciąg znaków aż do znaku '/'.</li></ol> |
+| Rezultat | Ekran wraca do wyboru wpisów. |
+
+| | |
+| - | - |
+| ID | TC020 |
+| Tytuł | Uruchamianie ekranu detali wpisu ze stringiem ' '|
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wejdź w zakładkę 'Wpisy'.</li><li>Wejdź w dowolny z widocznych wpisów.</li><li>W pasku URL usuń ostatni ciąg znaków aż do znaku '/'.</li><li>W miejsce ciągu znaków wpisz ' '.</li></ol> |
+| Rezultat | Ekran wraca do wyboru wpisów. |
+
+| | |
+| - | - |
+| ID | TC021 |
+| Tytuł | Uruchamianie ekranu detali wpisu z błędnym ID |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wejdź w zakładkę 'Wpisy'.</li><li>Wejdź w dowolny z widocznych wpisów.</li><li>W pasku URL usuń ostatni ciąg znaków aż do znaku '/'.</li><li>W miejsce ciągu znaków wpisz losowy ciąg znaków o dowolnej długości, np. 'bq2c'.</li></ol> |
+| Rezultat | Przeniesienie do ekranu 'Not-Found', brak kolejnej akcji. |
+
 ### Technologie użyte w Projekcie 
 
 ##### 1. MongoDB
