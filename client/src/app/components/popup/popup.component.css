@@ -1,0 +1,75 @@
+.wrapper {
+    border-radius: 4px;
+    opacity: 0;
+    animation: full 4s ease-in-out;
+    width: fit-content;
+    padding: 20px 40px;
+    font-size: 10pt;
+    font-family: 'Montserrat', sans-serif;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 40px 50px;
+
+    z-index: 2000;
+}
+
+.green {
+    border: 2px solid var(--color-success-faded-alt);
+    background-color: var(--color-success-faded);
+    color: whitesmoke;
+}
+
+.yellow {
+    border: 2px solid var(--color-alert-alt);
+    background-color: var(--color-alert);
+    color: black;
+}
+
+.red {
+    border: 2px solid var(--color-danger-alt);
+    background-color: var(--color-danger);
+    color: whitesmoke;
+}
+
+.show {
+    animation: showUp 2s ease-in-out;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes full {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

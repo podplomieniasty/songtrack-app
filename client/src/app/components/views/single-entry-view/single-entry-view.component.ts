@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TrackService } from '../../../services/track.service';
 import ITrack from '../../../interfaces/track.interface';
 import { CommonModule } from '@angular/common';
@@ -29,13 +29,17 @@ export class SingleEntryViewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute, 
     private trackService: TrackService,
-    private spotifyService: SpotifyService) {
+    private spotifyService: SpotifyService,
+    private router: Router) {
     
   }
 
   ngOnInit(): void {
     this.spotifyId = this.route.snapshot.paramMap.get('spotifyId')!;
-    this.trackService.getSingleTrack(this.spotifyId).subscribe((res) => {
+    this.trackService.getSingleTrack(this.spotifyId).subscribe((res: any) => {
+      if(res.length === 0) {
+        this.router.navigate(['/notfound']);
+      }
       const data = res as ITrack[];
       this.trackData = data[0];
       this.isLoaded = true;

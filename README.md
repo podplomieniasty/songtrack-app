@@ -111,8 +111,61 @@ Dokumentacja API wygenerowana zostanie i dołączona do dokumentacji w później
 | Kroki testowe | <ol><li>Wybierz zakładkę 'Logowanie'</li><li>Uzupełnij pole 'Nazwa' wartością znajdującą się w bazie.</li><li>Uzupełnij pole 'Hasło' wartością nie odpowiadającą danemu kontu</li><li>Zatwierdź</li></ol> |
 | Rezultat | Komunikat o błędzie walidacji, błąd logowania |
 
+| | |
+| - | - |
+| ID | TC011 |
+| Tytuł | Poprawne wyszukiwanie utworów |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Wpisy'</li><li>Uzupełnij pole wyszukiwania pełnym tytułem piosenki, która jest wyświetlona na stronie.</li></ol> |
+| Rezultat | Na stronie Wpisy wyświetla się tylko jeden wpis odpowiadający wyszukanej frazie. |
 
-Późniejsza faza projektu
+| | |
+| - | - |
+| ID | TC012 |
+| Tytuł | Wyszukiwanie fragmentem utworu |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wybierz zakładkę 'Wpisy'</li><li>Uzupełnij pole wyszukiwania fragmentem tytułu piosenki, która jest wyświetlona na stronie.</li></ol> |
+| Rezultat | Na stronie Wpisy wyświetla się jeden lub więcej utworów zawierających w tytule fragment danej frazy. |
+
+| | |
+| - | - |
+| ID | TC013 |
+| Tytuł | Dodawanie utworu |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wybierz opcję 'Dodaj nowy'</li><li>Uzupełnij pole wyszukiwania tytułem nieistniejącego w bazie utworu i kliknij 'Szukaj'.</li><li>Z rozwijanej listy kliknij docelowy utwór.</li><li>Wybierz opcję 'Film'.</li><li>Wpisz w kolejnym polu tytuł filmu i kliknij 'Szukaj'.</li><li>Kliknij przycisk 'Dodaj wpis'.</li></ol> |
+| Rezultat | Na stronie Wpisy wyświetla się wpisany utwór z liczbą filmów o wartości 1. |
+
+| | |
+| - | - |
+| ID | TC014 |
+| Tytuł | Aktualizowanie utworu |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wybierz opcję 'Dodaj nowy'</li><li>Uzupełnij pole wyszukiwania tytułem istniejącego utworu i kliknij 'Szukaj'.</li><li>Z rozwijanej listy kliknij docelowy utwór.</li><li>Wybierz opcję 'Film'.</li><li>Wpisz w kolejnym polu tytuł filmu i kliknij 'Szukaj'.</li><li>Kliknij przycisk 'Dodaj wpis'.</li></ol> |
+| Rezultat | Na stronie Wpisy wyświetla się wpisany utwór ze zwiększoną o 1 liczbą filmów. |
+
+| | |
+| - | - |
+| ID | TC015 |
+| Tytuł | Dodawanie utworu z pustą nazwą utworu |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Wybierz opcję 'Dodaj nowy'</li>Kliknij 'Szukaj'.</li></ol> |
+| Rezultat | Brak kolejnej akcji, pojawia się komunikat o błędzie. |
+
+| | |
+| - | - |
+| ID | TC016 |
+| Tytuł | Dodawanie utworu z pustą nazwą filmu |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Uzupełnij pole wyszukiwania tytułem istniejącego utworu i kliknij 'Szukaj'.</li><li>Z rozwijanej listy kliknij docelowy utwór.</li><li>Wybierz opcję 'Film'.</li><li>Kliknij "Szukaj".</li></ol> |
+| Rezultat | Brak kolejnej akcji, pojawia się komunikat o błędzie. |
+
+| | |
+| - | - |
+| ID | TC017 |
+| Tytuł | Dodawanie filmu nieistniejącego w bazie filmów |
+| Warunki początkowe | uruchomiona aplikacja frontendowa i serwerowa, dostęp do sieci  |
+| Kroki testowe | <ol><li>Uzupełnij pole wyszukiwania tytułem istniejącego utworu i kliknij 'Szukaj'.</li><li>Z rozwijanej listy kliknij docelowy utwór.</li><li>Wybierz opcję 'Film'.</li><li>Wpisz tytuł filmu, który nie istnieje w bazie, lub losowy ciąg znaków.</li><li>Kliknij 'Szukaj'.</li></ol> |
+| Rezultat | Brak kolejnej akcji, pojawia się komunikat o błędzie. |
 
 ### Technologie użyte w Projekcie 
 

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { EntryFormComponent } from './components/entry-form/entry-form.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { PopupComponent } from './components/popup/popup.component';
 
 interface Movie {
   Title: string;
@@ -16,43 +17,35 @@ interface Movie {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, FormsModule, CommonModule, HeaderComponent, EntryFormComponent],
+  imports: [RouterModule, FormsModule, CommonModule, HeaderComponent, EntryFormComponent, PopupComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = ''; 
-  movie: Movie | null = null;
+  popup = {
+    msg: '',
+    state: '',
+  }
+  popups: any = [];
 
   isModalVisible: boolean = false;
 
-  constructor(private imdbService: ImdbService) {}
-
-  searchMovie() {
-    console.log('Searching for movie:', this.title);
-
-    if (this.title.trim()) {
-      this.imdbService.getMovieByTitle(this.title).subscribe(
-        (data: any) => {
-          console.log('Movie data received:', data);
-          if (data.Response === 'True') {
-            this.movie = data;
-          } else {
-            this.movie = null;
-          }
-        },
-        (error: any) => {
-          console.error('Error:', error);
-          this.movie = null;
-        }
-      );
-    } else {
-      this.movie = null;
-    }
-  }
+  constructor() {}
 
   toggleModalState(val: boolean): void {
     this.isModalVisible = val;
-    console.log(val);
   } 
+
+  setPopup(obj: any) {
+    this.popup = {
+      msg: obj.msg,
+      state: obj.type,
+    }
+    this.popups.push(obj)
+    setTimeout(() => {
+      this.popups.unshift();
+    }, 4000);
+  }
+
+  
 }

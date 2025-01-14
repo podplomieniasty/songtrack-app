@@ -17,6 +17,8 @@ import { TrackService } from '../../services/track.service';
 })
 export class EntryFormComponent {
 
+  @Output() popup: EventEmitter<any> = new EventEmitter();
+
   public formData = {
     trackName: '',
     sourceType: 'movie',
@@ -35,7 +37,10 @@ export class EntryFormComponent {
   constructor(private spotify: SpotifyService, private imdb: ImdbService, private trackService: TrackService) {}
   
   searchForTrack = () => {
-    if(this.formData.trackName === '') return;
+    if(this.formData.trackName.trim() === '') {
+      this.showPopup('Wpisz nazwę utworu.', 'FAIL');
+      return;
+    }
     this.fetchedTracks = [];
     this.selectedTrack = {};
     this.isTrackSelected = false;
@@ -59,15 +64,22 @@ export class EntryFormComponent {
           this.fetchedTracks.push(fetchedTrack);
         })
       })
-      console.log(this.fetchedTracks);
+      
   }
 
   searchForSource = () => {
-    if(this.formData.sourceName === '') return;
+    if(this.formData.sourceName.trim() === '') {
+      this.showPopup('Wpisz nazwę filmu/serialu/gry.', 'FAIL');
+      return;
+    }
     this.isMovieSelected = false;
     this.fetchedMovie = {};
     this.imdb.getMovieByTitle(this.formData.sourceName)
       .subscribe((res: any) => {
+        if(res.Response === "False") {
+          this.showPopup('Nie znaleziono szukanego filmu.', 'FAIL');
+          return;
+        }
         this.fetchedMovie = {
           id: res.imdbID,
           name: res.Title,
@@ -95,9 +107,14 @@ export class EntryFormComponent {
       movies: [this.fetchedMovie]
     }
     this.trackService.addNewTrack(track).subscribe((res) => {
-      console.log('Succes!');
-      console.log(res);
+      this.showPopup('Pomyślnie dodano utwór!', 'SUCCESS');
       this.emitModalClose();
     })
   }
+
+  showPopup(msg: string, type: string) {
+    this.popup.emit({msg: msg, type: type});
+  }
+
+
 }

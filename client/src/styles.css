@@ -17,4 +17,16 @@
 
     --color-white: whitesmoke;
     --color-gray: gray;
+
+    --color-danger: #ff3333;
+    --color-danger-alt: #ff1c1c;
+
+    --color-alert: #cece4a;
+    --color-alert-alt: #bebe26;
+
+
+    --color-success: #29c71e;
+    --color-success-alt: #2aa621;
+    --color-success-faded: #307541;
+    --color-success-faded-alt: #235c31;
 }

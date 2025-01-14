@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { notFoundGuard } from './guards/not-found.guard';
 
 export const routes: Routes = [
     { path: '',         loadComponent: () => import ('./components/views/main-view/main-view.component').then(c => c.MainViewComponent)},
@@ -10,5 +11,10 @@ export const routes: Routes = [
         path: 'signup',
         loadComponent: () => import('./components/views/signup-view/signup-view.component').then(c => c.SignupViewComponent),
     },
+    {
+        path: 'notfound',
+        loadComponent: () => import('./components/views/not-found-view/not-found-view.component').then(c => c.NotFoundViewComponent),
+        canActivate: [notFoundGuard],
+    }
     
 ];

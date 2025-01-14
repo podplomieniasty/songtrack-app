@@ -1,37 +1,11 @@
-<app-entry-form *ngIf="isModalVisible" (onModalClose)="toggleModalState(false)"/>
+<app-entry-form 
+  *ngIf="isModalVisible" 
+  (onModalClose)="toggleModalState(false)" 
+  (popup)="setPopup($event)"/>
 <div>
-  <app-header (onNewItem)="toggleModalState(true)"/>
+  <app-header (onNewItem)="toggleModalState(true)" />
   <router-outlet>
 
   </router-outlet>
 </div>
-
-
-
-
-
-
-<!-- <fieldset>
-  <legend>Formularz dodawania</legend>
-</fieldset>
-<fieldset>
-  <legend>Wpisy aplikacji</legend>
-  <div class="record">
-
-  </div>
-</fieldset>
-
-<div>
-  <input [(ngModel)]="title" placeholder="Wpisz tytuł filmu" />
-  <button (click)="searchMovie()">Szukaj</button>
-</div>
-
-<div *ngIf="movie">
-  <h1>{{ movie.Title }}</h1>
-  <img [src]="movie.Poster" alt="{{ movie.Title }}" />
-  <p>{{ movie.Plot }}</p>
-</div>
-
-<div *ngIf="!movie">
-  <p>Brak danych o filmie. Wpisz tytuł i kliknij "Szukaj".</p>
-</div> -->
+<app-popup *ngFor="let _popup of popups"  [message]="_popup"/>

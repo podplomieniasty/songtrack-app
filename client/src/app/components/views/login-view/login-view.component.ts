@@ -1,18 +1,25 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { UserService } from '../../../services/user/user.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { PopupComponent } from '../../popup/popup.component';
 
 @Component({
   selector: 'app-login-view',
   standalone: true,
-  imports: [HttpClientModule, FormsModule],
+  imports: [HttpClientModule, FormsModule, PopupComponent],
   providers: [UserService],
   templateUrl: './login-view.component.html',
   styleUrl: './login-view.component.css'
 })
 export class LoginViewComponent {
+
+  popup = {
+    msg: '',
+    type: '',
+  }
+
   public credentials = {
     name: '',
     password: ''
@@ -49,5 +56,12 @@ export class LoginViewComponent {
         this.router.navigate(['/']).then(() => {window.location?.reload()});
       }
     })
+  }
+
+  handlePopup(msg: string, type: string) {
+    this.popup = {
+      msg: msg,
+      type: type,
+    }
   }
 }
