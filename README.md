@@ -28,7 +28,7 @@ Aplikacja służy do zliczania oraz dokumentowania wystąpień utworów muzyczny
 | manualne | interfejs użytkownika | 10 | Testom manualnym poddano formularze komunikacji użytkownika z aplikacją. Te formularze obsługują rejestrację i logowanie użytkownika do aplikacji.  |
 
 ### Dokumentacja API
-Dokumentacja API wygenerowana zostanie i dołączona do dokumentacji w późniejszej fazie projektu
+[Link do dokumentacji API](https://docs.google.com/document/d/1yAIw5Ms4qVUo9ZLuzUkoBCj8qhHRc6ZTjywOVJxmEk8/edit?usp=sharing)
 
 ### Przypadki testowania dla testera maualnego
 | | |
