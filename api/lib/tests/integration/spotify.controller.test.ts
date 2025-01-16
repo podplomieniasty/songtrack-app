@@ -57,4 +57,26 @@ describe('SpotifyController', () => {
             expect(res.status).toBe(404);
         })
     })
+
+    describe('/api/spotify/track/:spotifyId', () => {
+        test('should return a song called Cruel Summer', async () => {
+
+            const songName = 'Cruel Summer';
+
+            const res = await request(app)
+                .get(`/api/spotify/track/${songName}`);
+
+            expect(res.status).toBeGreaterThanOrEqual(200);
+        })
+
+        test('should return code 404', async () => {
+
+            const songName = '';
+
+            const res = await request(app)
+                .get(`/api/spotify/track/${songName}`);
+
+            expect(res.status).toBe(404);
+        })
+    })
 })
