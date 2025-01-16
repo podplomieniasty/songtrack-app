@@ -23,8 +23,8 @@ Aplikacja służy do zliczania oraz dokumentowania wystąpień utworów muzyczny
 ### Testy
 | Rodzaj testów | Lokalizacja | Liczba testów | Opis |
 | -             | -           | - | -    |
-| jednostkowe   | api/lib/tests | 15 | Testy jednostkowe napisano dla indywidualnych serwisów aplikacji serwerowej. Serwisy są kluczowym elementem całej aplikacji, ponieważ opdowiadają za bezpośrednią komunikację z bazą danych i zwracanie danych wyświetlanych w aplikacji frontendowej. |
-| integracyjne  | api/lib/tests/integration | 11 | Testom integracyjnym poddano najważniejsze kontrolery serwera, w celu poprawnego oszacowania kompatybilności z aplikacjami biblioteki Express.js i ocenienia jak radzą sobie w symulowanym, działającym środowisku. |
+| jednostkowe   | api/lib/tests | 20 | Testy jednostkowe napisano dla indywidualnych serwisów aplikacji serwerowej. Serwisy są kluczowym elementem całej aplikacji, ponieważ opdowiadają za bezpośrednią komunikację z bazą danych i zwracanie danych wyświetlanych w aplikacji frontendowej. |
+| integracyjne  | api/lib/tests/integration | 13 | Testom integracyjnym poddano najważniejsze kontrolery serwera, w celu poprawnego oszacowania kompatybilności z aplikacjami biblioteki Express.js i ocenienia jak radzą sobie w symulowanym, działającym środowisku. |
 | manualne | interfejs użytkownika | 10 | Testom manualnym poddano formularze komunikacji użytkownika z aplikacją. Te formularze obsługują rejestrację i logowanie użytkownika do aplikacji.  |
 
 ### Dokumentacja API
