@@ -66,6 +66,17 @@ describe("TrackController", () => {
             expect(res.status).toBe(200);
             expect(res.body.length).toBe(1);
         })
+
+        test('should return 200 and empty list', async () => {
+            
+            // when
+            const res = await request(app)
+                .get('/api/track/all');
+
+            // then
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(0);
+        })
     })
 
     describe('/api/track/add', () => {
@@ -148,6 +159,56 @@ describe("TrackController", () => {
 
             expect(res.status).toBe(400);
 
+        })
+
+        test('should throw an error without id', async () => {
+            // given
+            const track: ITrack = {
+                spotifyId: "",
+                img: "image.jpg",
+                name: "Test Track",
+                artist: "Test Artist",
+                href: "http://example.com",
+                movies: [
+                    {
+                        id: "movie1",
+                        name: "Movie 1",
+                        plot: "Plot of Movie 1",
+                        year: "2023",
+                        img: "movie1.jpg",
+                    },
+                ],
+            };
+
+            const res = await request(app)
+                .post('/api/track/add')
+                .set('content-type', 'application/json')
+                .send(track);
+
+            // then
+            expect(res.status).toBe(400);
+        })
+
+        test('should add', async () => {
+            // given
+            const track: ITrack = {
+                spotifyId: "123",
+                img: "",
+                name: "",
+                artist: "",
+                href: "",
+                movies: [
+                    
+                ],
+            };
+
+            const res = await request(app)
+                .post('/api/track/add')
+                .set('content-type', 'application/json')
+                .send(track);
+
+            // then
+            expect(res.status).toBe(200);
         })
     })
     

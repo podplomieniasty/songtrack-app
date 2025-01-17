@@ -34,4 +34,14 @@ describe('UserService', () => {
     expect(queriedUser).not.toBeNull();
     expect(queriedUser.name).toBe('Test User');
   });
+
+  it('should query user by query func', async () => {
+    const user = { name: 'Test', joined: new Date() };
+    await userService.createNewOrUpdate(user);
+    
+    const queried = await userService.query({name: user.name});
+    expect(queried).not.toBeNull();
+    expect(queried[0].name).toBe('Test')
+  })
+
 });

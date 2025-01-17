@@ -61,17 +61,6 @@ describe('PasswordService', () => {
         expect(passwordInDb?.password).toBe(newPassword);
     });
 
-    // test('should authorize with the correct password', async () => {
-    //     const userId = new mongoose.Types.ObjectId();
-    //     const password = 'correctPassword';
-
-    //     await new PasswordModel({ userId, password }).save();
-
-    //     const result = await passwordService.authorize(userId.toString(), password);
-
-    //     expect(result).toBe(true);
-    // });
-
     test('should fail authorization with incorrect password', async () => {
         const userId = new mongoose.Types.ObjectId();
         const correctPassword = 'correctPassword';

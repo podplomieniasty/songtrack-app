@@ -68,7 +68,6 @@ describe('TokenService', () => {
         const tokenValue = 'test-token';
         const userId = new mongoose.Types.ObjectId();
 
-        
         await new TokenModel({
             userId,
             type: 'authorization',
