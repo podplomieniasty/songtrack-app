@@ -23,9 +23,9 @@ Aplikacja służy do zliczania oraz dokumentowania wystąpień utworów muzyczny
 ### Testy
 | Rodzaj testów | Lokalizacja | Liczba testów | Opis |
 | -             | -           | - | -    |
-| jednostkowe   | api/lib/tests | 20 | Testy jednostkowe napisano dla indywidualnych serwisów aplikacji serwerowej. Serwisy są kluczowym elementem całej aplikacji, ponieważ opdowiadają za bezpośrednią komunikację z bazą danych i zwracanie danych wyświetlanych w aplikacji frontendowej. |
-| integracyjne  | api/lib/tests/integration | 13 | Testom integracyjnym poddano najważniejsze kontrolery serwera, w celu poprawnego oszacowania kompatybilności z aplikacjami biblioteki Express.js i ocenienia jak radzą sobie w symulowanym, działającym środowisku. |
-| manualne | interfejs użytkownika | 10 | Testom manualnym poddano formularze komunikacji użytkownika z aplikacją. Te formularze obsługują rejestrację i logowanie użytkownika do aplikacji.  |
+| [jednostkowe](https://github.com/podplomieniasty/songtrack-app/tree/master/api/lib/tests)   | api/lib/tests | 20 | Testy jednostkowe napisano dla indywidualnych serwisów aplikacji serwerowej. Serwisy są kluczowym elementem całej aplikacji, ponieważ opdowiadają za bezpośrednią komunikację z bazą danych i zwracanie danych wyświetlanych w aplikacji frontendowej. |
+| [integracyjne](https://github.com/podplomieniasty/songtrack-app/tree/master/api/lib/tests/integration)  | api/lib/tests/integration | 20 | Testom integracyjnym poddano najważniejsze kontrolery serwera, w celu poprawnego oszacowania kompatybilności z aplikacjami biblioteki Express.js i ocenienia jak radzą sobie w symulowanym, działającym środowisku. |
+| manualne | interfejs użytkownika | 21 | Testom manualnym poddano formularze komunikacji użytkownika z aplikacją. Te formularze obsługują rejestrację i logowanie użytkownika do aplikacji.  |
 
 ### Dokumentacja API
 [Link do dokumentacji API](https://docs.google.com/document/d/1yAIw5Ms4qVUo9ZLuzUkoBCj8qhHRc6ZTjywOVJxmEk8/edit?usp=sharing)
