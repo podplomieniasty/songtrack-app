@@ -29,7 +29,7 @@ class TrackService {
         try {
             await TrackModel.updateOne(
                 {spotifyId: track.spotifyId},
-                { $push: {movies: track.movies[0]} }
+                { $push: {movies: track.movies[0], series: track.series[0], games: track.games[0]}, $set: {updateDate: new Date()} }
             );
         } catch (err) {
             console.error('Query failed:', err);

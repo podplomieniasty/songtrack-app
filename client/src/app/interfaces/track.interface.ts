@@ -1,3 +1,4 @@
+import { IGame } from "./game.interface";
 import IMovie from "./movie.interface";
 
 export default interface ITrack {
@@ -7,4 +8,8 @@ export default interface ITrack {
     artist: string;
     href: string;
     movies: IMovie[];
+    series: IMovie[];
+    games: IGame[];
+    addDate: Date;
+    updateDate: Date;
 }

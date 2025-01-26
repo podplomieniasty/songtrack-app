@@ -4,18 +4,66 @@
             <img src="{{trackData.img}}" />
         </div>
         <div class="sev-data">
-            <h1>{{trackData.name}}</h1>
-            <h2>{{trackData.artist}}</h2>
+            <h1>{{trackData.name}} <a target="_blank" href="{{apiTrackData.external_urls.spotify}}"><img src="assets/chains-icon.png" /></a></h1>
+            <h2>{{trackData.artist}}<a target="_blank" href="{{apiTrackData.artists[0].external_urls.spotify}}"><img src="assets/chains-icon.png" style="width: 16px; height: 16px; margin-left: 10px;"/></a></h2>
             <div class="sev-track-data">
                 <div class="sev-track-data-div">
-                    <div>
-                        <p><b>Data wydania:</b> {{apiTrackData.album.release_date || '...'}}</p>
-                    </div>
+                    <table>
+                        <tr>
+                            <td>SpotifyID: </td><td>{{apiTrackData.id || '...'}}</td>
+                        </tr>
+                        <tr>
+                            <td>Data wydania:</td><td>{{apiTrackData.album.release_date || '...'}}</td>
+                        </tr>
+                        <tr>
+                            <td>Album:</td><td>{{apiTrackData.album.name || '...'}}</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        Helo
+    
+</div>
+<div class="single-entry-view" *ngIf="trackData.movies.length !== 0">
+    <h3>Zawarto w filmach:</h3>
+    <div class="sev-features">
+        <div class="ec-heading" *ngFor="let movie of trackData.movies">
+            <div class="ec-left">
+                <img [src]="movie.img" />
+            </div>
+            <div class="ec-right">
+                <h4>{{movie.name}}</h4>
+                <p>{{movie.year}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="single-entry-view" *ngIf="trackData.series.length !== 0">
+    <h3>Zawarto w serialach:</h3>
+    <div class="sev-features">
+        <div class="ec-heading" *ngFor="let movie of trackData.series">
+            <div class="ec-left">
+                <img [src]="movie.img" />
+            </div>
+            <div class="ec-right">
+                <h4>{{movie.name}}</h4>
+                <p>{{movie.year}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="single-entry-view" *ngIf="trackData.games.length !== 0">
+    <h3>Zawarto w grach:</h3>
+    <div class="sev-features">
+        <div class="ec-heading" *ngFor="let game of trackData.games">
+            <div class="ec-left">
+                <img [src]="game.img" />
+            </div>
+            <div class="ec-right">
+                <h4>{{game.name}}</h4>
+                <p>{{game.released}}</p>
+            </div>
+        </div>
     </div>
 </div>

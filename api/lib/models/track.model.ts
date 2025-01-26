@@ -1,5 +1,6 @@
 import { model, Schema } from "mongoose";
 import { IMovie } from "./movie.model";
+import { IGame } from "./game.model";
 
 export interface ITrack {
     spotifyId: string;
@@ -7,7 +8,11 @@ export interface ITrack {
     name: string;
     artist: string;
     href: string;
+    addDate?: Date;
+    updateDate?: Date;
     movies: IMovie[];
+    series: IMovie[];
+    games: IGame[];
 }
 
 export type Query<T> = {
@@ -20,7 +25,11 @@ const TrackSchema: Schema = new Schema({
     name: {type: String, default: ''},
     artist: {type: String, default: ''},
     href: {type: String, default: ''},
-    movies: {type: Array<IMovie>, default: []}
+    addDate: {type: Date, default: new Date()},
+    updateDate: {type: Date, default: new Date()},
+    movies: {type: Array<IMovie>, default: []},
+    series: {type: Array<IMovie>, default: []},
+    games: {type: Array<IGame>, default: []}
 })
 
 export default model<ITrack>('SONGTRACK_DB_TRACK', TrackSchema);

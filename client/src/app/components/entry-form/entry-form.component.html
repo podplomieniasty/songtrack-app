@@ -39,14 +39,14 @@
                     <input type="radio" name="trackSource" id="trackSource" value="movie" [(ngModel)]="formData.sourceType" checked >
                     <span>Film</span>
                 </label>
-                <!-- <label>
-                    <input type="radio" name="trackSource" id="trackSource" value="show" [(ngModel)]="formData.sourceType">
+                <label>
+                    <input type="radio" name="trackSource" id="trackSource" value="series" [(ngModel)]="formData.sourceType">
                     <span>Serial</span>
                 </label>
                 <label>
                     <input type="radio" name="trackSource" id="trackSource" value="game" [(ngModel)]="formData.sourceType">
                     <span>Gra</span>
-                </label> -->
+                </label>
             </div>
             <p>Znajdź miejsce wystąpienia utworu.</p>
             <input type="text" name="trackName" id="trackName" [(ngModel)]="formData.sourceName" />
@@ -60,6 +60,18 @@
                 <div>
                     <p>{{fetchedMovie.name}}</p>
                     <span>{{fetchedMovie.year}}</span>
+                </div>
+            </div>
+            <button class="efw-submit" type="button" (click)="handleFormSubmit()">Dodaj wpis</button>
+        </div>
+
+        <div class="efw-container" *ngIf="isGameSelected">
+            <h4>Znalezione źródło</h4>
+            <div class="efw-fetched-track">
+                <img src="{{fetchedGame.img}}" />
+                <div>
+                    <p>{{fetchedGame.name}}</p>
+                    <span>{{fetchedGame.released}}</span>
                 </div>
             </div>
             <button class="efw-submit" type="button" (click)="handleFormSubmit()">Dodaj wpis</button>

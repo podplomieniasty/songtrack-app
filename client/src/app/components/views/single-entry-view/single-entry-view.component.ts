@@ -21,7 +21,11 @@ export class SingleEntryViewComponent implements OnInit {
     href: '...',
     img: '...',
     movies: [],
-    name: '...'
+    series: [],
+    games: [],
+    name: '...',
+    updateDate: new Date(),
+    addDate: new Date()
   }
   apiTrackData: any = {};
   isLoaded: boolean = false;
@@ -45,7 +49,6 @@ export class SingleEntryViewComponent implements OnInit {
       this.isLoaded = true;
       this.spotifyService.getTrackById(this.trackData.spotifyId).subscribe((res) => {
         this.apiTrackData = res;
-        console.log(res);
       })
     });
     

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ImdbService } from '../../imdb.service';
 import ITrack from '../../interfaces/track.interface';
 import { TrackService } from '../../services/track.service';
+import { RawgService } from '../../services/rawg.service';
 
 @Component({
   selector: 'app-entry-form',
@@ -32,9 +33,12 @@ export class EntryFormComponent {
   fetchedMovie: any = {};
   isMovieSelected: boolean = false;
 
+  fetchedGame: any = {};
+  isGameSelected: boolean = false;
+
   @Output() onModalClose: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private spotify: SpotifyService, private imdb: ImdbService, private trackService: TrackService) {}
+  constructor(private spotify: SpotifyService, private imdb: ImdbService, private trackService: TrackService, private rawg: RawgService) {}
   
   searchForTrack = () => {
     if(this.formData.trackName.trim() === '') {
@@ -73,8 +77,24 @@ export class EntryFormComponent {
       return;
     }
     this.isMovieSelected = false;
+    this.isGameSelected = false;
     this.fetchedMovie = {};
-    this.imdb.getMovieByTitle(this.formData.sourceName)
+    this.fetchedGame = {};
+    if(this.formData.sourceType === 'game') {
+      this.rawg.getGameByTitle(this.formData.sourceName)
+      .subscribe((res: any) => {
+        this.fetchedGame = {
+          rawgId: res.results[0].id,
+          name: res.results[0].name,
+          description: ' ',
+          img: res.results[0].background_image,
+          released: res.results[0].released
+        }
+        console.log(this.fetchedGame);
+        this.isGameSelected = true;
+      })
+    } else {
+      this.imdb.getMovieByTitle(this.formData.sourceName)
       .subscribe((res: any) => {
         if(res.Response === "False") {
           this.showPopup('Nie znaleziono szukanego filmu.', 'FAIL');
@@ -89,6 +109,7 @@ export class EntryFormComponent {
         }
         this.isMovieSelected = true;
       })
+    }
   }
 
   setSelectedTrack = (track: any) => {
@@ -104,7 +125,11 @@ export class EntryFormComponent {
   handleFormSubmit(): void {
     const track: ITrack = {
       ...this.selectedTrack,
-      movies: [this.fetchedMovie]
+      addDate: new Date(),
+      updateDate: new Date(),
+      movies: this.formData.sourceType === 'movie' ? [this.fetchedMovie] : [],
+      series: this.formData.sourceType === 'series' ? [this.fetchedMovie] : [],
+      games: this.formData.sourceType === 'game' ? [this.fetchedGame] : [],
     }
     this.trackService.addNewTrack(track).subscribe((res) => {
       this.showPopup('Pomyślnie dodano utwór!', 'SUCCESS');

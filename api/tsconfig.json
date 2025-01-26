@@ -122,7 +122,8 @@
     "moduleResolution": "node", 
     "module": "CommonJS", 
     "skipLibCheck": true, 
-    "resolveJsonModule": true 
+    "resolveJsonModule": true,
+    "types": ["jest"]
   },
   "include": [
     "lib/**/*.ts",
@@ -130,5 +131,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }
