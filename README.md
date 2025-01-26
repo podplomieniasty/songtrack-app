@@ -1,4 +1,4 @@
-Testowanie i Jakość Oprogramowania
+Testowanie i Jakość Oprogramowania / Technologie Aplikacji Webowych II
 =============
 ### **Autorzy**
 ##### **Bartosz Burzec, Tomasz Fela**
@@ -13,10 +13,10 @@ Aplikacja służy do zliczania oraz dokumentowania wystąpień utworów muzyczny
 ### Uruchamianie aplikacji
 <ul>
   <li>
-    W celu uruchomienia aplikacji frontendowej, w katalogu <b>client</b> należy użyć polecenia <code>ng serve</code>.
+    W celu uruchomienia aplikacji frontendowej, w katalogu <b>client</b> należy użyć polecenia <code>npm install</code>, a następnie <code>ng serve</code>.
   </li>
   <li>
-    W celu uruchomienia aplikacji serwerowej, w katalogu <b>api</b> należy użyć polecenia <code>npm run dev</code>.
+    W celu uruchomienia aplikacji serwerowej, w katalogu <b>api</b> należy użyć polecenia <code>npm install</code>, a następnie <code>npm run dev</code>.
   </li>
 </ul>
 
