@@ -10,4 +10,6 @@ export const config = {
     spotifyApiEndpointTrack: 'https://api.spotify.com/v1/tracks',
     spotifyApiSearchLimit: 10,
     OMDB_API_KEY: process.env.OMDB_API_KEY,
+    RAWG_API_KEY: process.env.RAWG_API_KEY,
+    rawgApiEndpoint: 'https://api.rawg.io/api',
 };
